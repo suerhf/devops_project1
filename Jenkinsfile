@@ -30,6 +30,7 @@ pipeline {
 	stage('Deploy NGINX Container') {
 	    steps {
                 sh "docker-compos up -d"
+	   }
 	}
     }
 }
