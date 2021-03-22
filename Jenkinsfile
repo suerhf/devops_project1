@@ -6,19 +6,19 @@ pipeline {
     }
     agent any
     stages {
-        stage('Cloning our Git') {
+        stage('Cloning Git') {
             steps {
                 git 'https://github.com/suerhf/nginx_dockerfile.git'
             }
         }
-        stage('Building our image') {
+        stage('Building image') {
             steps {
                 script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
             }
         }
     }
-        stage('Deploy our image') {
+        stage('Deploy image') {
             steps {
                 script {
                     docker.withRegistry( '', registryCredential ) {
