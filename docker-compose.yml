@@ -1,0 +1,8 @@
+web:
+   image: suerhf/devops_project1:10
+   restart: always
+   ports:
+    - "8181:80"
+   environment:
+    - NGINX_HOST=localhost
+    - NGINX_PORT=81
