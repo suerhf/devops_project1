@@ -27,5 +27,9 @@ pipeline {
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
         }
+	stage('Deploy NGINX Container')
+	    steps {
+                sh "docker-compos up -d"
+	}
     }
 }

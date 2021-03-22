@@ -1,8 +1,8 @@
 web:
-   image: suerhf/devops_project1:10
+   image: suerhf/devops_project1:$BUILD_NUMBER
    restart: always
    ports:
     - "8181:80"
    environment:
     - NGINX_HOST=localhost
-    - NGINX_PORT=81
+    - NGINX_PORT=80
